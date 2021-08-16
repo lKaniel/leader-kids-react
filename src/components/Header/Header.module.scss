@@ -1,0 +1,54 @@
+.Header{
+    position: fixed;
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    background: #4472CA;
+    height: 50px;
+    border-radius: 20px;
+    z-index: 999999;
+
+    .Title{
+        color: #F3EFF5;
+        font-size: 24px;
+        font-weight: 700;
+        margin: auto;
+        text-align: center;
+        line-height: 45px;
+    }
+}
+
+.HeaderWrap{
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background: #F3EFF5;
+    z-index: 999999999;
+    padding-top: 20px;
+}
+
+.PhantomHeader{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 5px;
+    padding-top: 20px;
+}
+
+.LeftRounder{
+    position: fixed;
+    width: calc(100% - 40px);
+    height: calc(100% - 90px);
+    margin-top: 80px;
+    margin-left: 20px;
+    z-index: 999999;
+    //visibility: hidden;
+    border-radius: 20px;
+    pointer-events: none;
+    box-shadow: -10px -10px 0px #F3EFF5,
+                10px -10px 0px #F3EFF5,
+                -50px -10px 0px #F3EFF5,
+                50px -10px 0px #F3EFF5,
+                -10px 10px 0px #F3EFF5,
+                10px 10px 0px #F3EFF5,
+                -50px 10px 0px #F3EFF5,
+                50px 10px 0px #F3EFF5
+}

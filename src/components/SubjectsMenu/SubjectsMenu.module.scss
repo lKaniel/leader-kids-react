@@ -1,0 +1,124 @@
+.SubjectsMenu {
+  .Buttons {
+    display: flex;
+    height: 60px;
+    justify-content: space-around;
+    align-items: center;
+
+    .Button {
+      height: 60px;
+      //color: #F3EFF5;
+      //background: #4472CA99;
+      color: #353535;
+      background: #F3EFF555;
+      font-weight: 600;
+      flex-grow: 1;
+      outline: none;
+      border: none;
+      border-radius: 20px;
+
+      img{
+        width: 30px;
+      }
+    }
+
+    .active {
+      background: #F3EFF5;
+    }
+  }
+
+  .Info {
+    width: calc(100% - 0px);
+    margin-top: 10px;
+    border-radius: 20px;
+    //background: #4472CA;
+    color: #353535;
+
+    .Title {
+      //color: #F3EFF5;
+      font-size: 24px;
+      font-weight: 600;
+      padding: 20px 20px;
+      padding-bottom: 0px;
+    }
+
+    .Text {
+      //color: #F3EFF5;
+      font-size: 20px;
+      padding: 10px 20px;
+      padding-bottom: 20px;
+    }
+  }
+
+  .Teachers {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 50px 20px 20px 20px;
+    //background: #4472CA;
+    background: #F3EFF5;
+    overflow: hidden;
+
+    .Photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50px;
+      border: 5px solid #353535;
+      box-sizing: border-box;
+      z-index: 99;
+      float: left;
+    }
+
+    .TeacherInfo {
+      margin-left: 10px;
+      margin-top: 10px;
+      width: calc(100% - 20px);
+      background: #F3EFF5;
+      height: 260px;
+      border-radius: 50px 20px 20px 20px;
+      z-index: 98;
+      overflow: hidden;
+
+      .Name {
+        height: 100px;
+        font-size: 20px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .Bio {
+        padding: 20px;
+        font-size: 20px;
+        font-weight: 200;
+      }
+    }
+
+    .TeachersList{
+      width: calc(300%);
+      margin: 10px 10px;
+      height: 95px;
+
+      .TeacherButton{
+        width: 75px;
+        height: 75px;
+        border-radius: 50px;
+        border: 3px solid #353535;
+        box-sizing: border-box;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .Teachers{
+    width: calc(50vw - 40px) !important;
+    margin: 0 5px;
+  }
+
+  .Teachers:last-of-type{
+    margin: 0;
+  }
+}

@@ -1,0 +1,80 @@
+.Block {
+  box-sizing: content-box !important;
+  text-align: left;
+  z-index: -1 !important;
+  background: #DEDAE0;
+  width: calc(100% - 60px);
+  //padding: 20px 10px;
+  padding: 10px;
+  margin: 5px 20px;
+  border-radius: 20px;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .ImgWrap {
+    position: absolute;
+    margin-left: -10px;
+    margin-top: -10px;
+    width: calc(100vw - 40px);
+    height: calc(100% - 10px);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: url("../../img/bg1.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+  }
+
+  .ImgWrap::before{
+    background-color: #DEDAE0cc;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+
+  .Title {
+    position: relative;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px;
+    color: #353535;
+    z-index: 2;
+  }
+
+  .OuterButton {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: right;
+    padding: 20px;
+    padding-top: 30px;
+    margin-top: auto;
+    z-index: 2;
+  }
+}
+
+.starting {
+  min-height: 300px;
+}
+
+.BlockWrap {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+@media (min-width: 1000px) {
+  .starting{
+    min-height: 500px;
+  }
+
+  .Title{
+    font-size: 40px !important;
+  }
+}

@@ -1,0 +1,17 @@
+.SliderWrap{
+  width: 100%;
+  overflow: hidden;
+  .Slider{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    transform: translate3d(0%, 0, 0);
+    transition: transform .5s ease-in-out;
+    overflow: hidden;
+  }
+
+  .Buttons{
+
+  }
+
+}
