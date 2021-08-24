@@ -10,6 +10,7 @@ const Slider = ({children}) => {
     })
 
     const swipeFor = useCallback((amount) => {
+        if (window.innerWidth < 1000) {
             setState((prev) => {
                 let selected = prev.selected + amount
                 if (selected >= prev.children.length) {
@@ -22,7 +23,21 @@ const Slider = ({children}) => {
                     selected
                 }
             })
-        },[])
+        } else {
+            setState((prev) => {
+                let selected = prev.selected + amount
+                if (selected >= prev.children.length - 1) {
+                    selected = 0
+                } else if (selected < 0) {
+                    selected = prev.children.length - 1
+                }
+                return {
+                    ...prev,
+                    selected
+                }
+            })
+        }
+    }, [])
 
     useEffect(() => {
         // setInterval(() => {
@@ -31,12 +46,20 @@ const Slider = ({children}) => {
     }, [swipeFor]);
 
     let length = children.length;
+    let coef = 100
+    if (window.innerWidth > 1000) {
+        coef /= 2
+    }
 
     return (
         <div className={classes.SliderWrap}>
-            <Swipeable onSwipeLeft={()=>{swipeFor(1)}} onSwipeRight={()=>{swipeFor(-1)}}>
+            <Swipeable onSwipeLeft={() => {
+                swipeFor(1)
+            }} onSwipeRight={() => {
+                swipeFor(-1)
+            }}>
                 <div className={classes.Slider} style={{
-                    width: length * 100 + "%",
+                    width: length * coef + "%",
                     transform: `translate3d(${-100 / length * (state.selected)}%,0,0)`
                 }}>
                     {children}

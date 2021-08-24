@@ -3,7 +3,7 @@ import classes from './Block.module.scss';
 
 const Block = ({title, children, buttonText, buttonAction, startingBlock, img}) => {
     return (
-        <div className={classes.BlockWrap}>
+        <div className={classes.BlockWrap + " " + (startingBlock ? classes.startingWrap : "")}>
             <div className={classes.Block + " " + (startingBlock ? classes.starting : "")}>
                 {startingBlock ?
                     <div className={classes.ImgWrap} style={{

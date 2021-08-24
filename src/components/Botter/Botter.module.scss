@@ -1,0 +1,12 @@
+.Botter{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1000px) {
+  .Botter{
+    flex-direction: row;
+    align-items: center;
+  }
+}
