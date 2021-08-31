@@ -1,15 +1,15 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useRef, useState} from 'react';
 import mariaA from '../../img/mariaAl.jpg';
-import yoriy from '../../img/yriy.jpg';
+import yoriy from '../../img/yriyS.png';
 import alexeiV from '../../img/alexeiV.jpg'
 import olgN from '../../img/ON.jpg'
 import math from '../../img/math.svg'
 import clavdiaT from './../../img/klavdiaT.jpg'
+import alinaA from './../../img/alinaA.jpg'
 import handmade from '../../img/handmade.svg'
 import science from '../../img/science.svg'
 import classes from './SubjectsMenu.module.scss';
 import StringFormatter from "../StringFormatter/StringFormatter";
-import {Draggable} from "react-touch";
 import Slider from "../Slider/Slider";
 
 const SubjectsMenu = () => {
@@ -27,17 +27,27 @@ const SubjectsMenu = () => {
                 teachers: [
                     {
                         name: "Макодзеба Марія Олександрівна",
-                        bio: "вчитель математики Києво-Печерського ліцею № 171 «Лідер», І категорія, Президентка ГО «Асоціація гайдів України»",
+                        bio: "вчитель математики Києво-Печерського ліцею № 171 «Лідер», І категорія, Президентка ГО «Асоціація гайдів України». Педагогічний стаж: 11 років",
                         img: mariaA
                     },
                     {
                         name: "Андреєв Юрій Сергійович",
-                        bio: "вчитель 7 та 11 математичних класів Києво-Печерського ліцею № 171 «Лідер», вища категорія",
+                        bio: "вчитель 7 та 11 математичних класів Києво-Печерського ліцею № 171 «Лідер», вища категорія. Педагогічний стаж: 15 років",
                         img: yoriy
                     },
                     {
-                        name: "Марценюк Ольга Миколаївна ",
-                        bio: "вчитель математики Києво-Печерського ліцею № 171 «Лідер», вища категорія, педагогічне звання «старший вчитель»",
+                        name: "Марценюк Ольга Миколаївна",
+                        bio: "вчитель математики Києво-Печерського ліцею № 171 «Лідер», вища категорія, педагогічне звання «старший вчитель». Педагогічний стаж: 19 років",
+                        img: olgN
+                    },
+                    {
+                        name: "Романенко Аліна Оскарівна",
+                        bio: "вчитель 6 та 10 математичних класів Києво-Печерського ліцею № 171 «Лідер», Заслужений вчитель України, вища категорія, вчитель-методист. Педагогічний стаж: з 2006 року",
+                        img: alinaA
+                    },
+                    {
+                        name: "Бачило Тетяна Вікторівна ",
+                        bio: "вчитель математики Києво-Печерського ліцею № 171 «Лідер», категорія І",
                         img: olgN
                     }
                 ]
@@ -70,6 +80,8 @@ const SubjectsMenu = () => {
             },
         ]
     })
+
+    const listRef = useRef()
 
 
     let changeActive = useCallback((active) => {
@@ -134,6 +146,7 @@ const SubjectsMenu = () => {
                     {window.innerWidth >= 1000 ? "Математика" : null}
                 </button>
                 <button className={classes.Button + " " + (state.active === 2 ? classes.active : null)}
+                        style={{margin: "0 10px"}}
                         onClick={() => {
                             changeActive(2)
                         }}
@@ -142,7 +155,6 @@ const SubjectsMenu = () => {
                     {window.innerWidth >= 1000 ? "Science" : null}
                 </button>
                 <button className={classes.Button + " " + (state.active === 1 ? classes.active : null)}
-                        style={{margin: "0 10px"}}
                         onClick={() => {
                             changeActive(1)
                         }}
@@ -173,18 +185,13 @@ const SubjectsMenu = () => {
                             </div>
                         </div>
                     </div>
-                    {/*<Draggable style={{translateX: 0, translateY: 0}}>*/}
-                    {/*    {({translateX}) => {*/}
-                    {/*        return (*/}
                     <div
                         className={classes.TeachersList}
+                        ref={listRef}
                         // style={{transform: `translate3d(${translateX}px, 0px, 0)`}}
                     >
                         {listOfTeachers}
                     </div>
-                    {/*    );*/}
-                    {/*}}*/}
-                    {/*</Draggable>*/}
                 </div>
                 : null}
             {window.innerWidth >= 700 ?

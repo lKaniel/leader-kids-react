@@ -4,4 +4,6 @@
     min-height: 100vh;
     background: #F3EFF5;
     overflow-x: hidden;
+    margin: auto;
+    max-width: 1440px;
 }

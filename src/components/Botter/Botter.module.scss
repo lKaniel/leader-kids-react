@@ -2,11 +2,38 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding-bottom: 10px;
+  .Container{
+    .Line{
+      height: 40px;
+      font-size: 20px;
+      font-weight: 600;
+      user-select: text !important;
+      line-height: 40px;
+      .Icon{
+        width: 40px;
+        float: left;
+        border-radius: 10px;
+      }
+
+      .Text{
+        margin:0px 10px;
+        float: left;
+        color: #353535;
+      }
+
+    }
+
+    a{
+      text-decoration: none;
+    }
+  }
 }
 
 @media (min-width: 1000px) {
   .Botter{
     flex-direction: row;
     align-items: center;
+    padding-bottom: 0px;
   }
 }

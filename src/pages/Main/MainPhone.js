@@ -14,6 +14,7 @@ import SubjectsMenu from "../../components/SubjectsMenu/SubjectsMenu";
 import MapWidget from "../../components/MapWidget/MapWidget";
 import Botter from "../../components/Botter/Botter";
 import {useHistory} from "react-router-dom";
+import Calendar from "../../components/Calendar/Calendar";
 
 const MainPhone = () => {
     const history = useHistory();
@@ -40,7 +41,7 @@ const MainPhone = () => {
                        img={bg3}
                        buttonText={"Реєстрація"}
                        buttonAction={() => {
-                           window.location.replace("https://docs.google.com/forms/d/1i2nrNR4o6e6rRalPRBiP9fPcK2ZELkzsLlfOV3BRR3Y/edit")
+                           window.location.assign("https://docs.google.com/forms/d/1i2nrNR4o6e6rRalPRBiP9fPcK2ZELkzsLlfOV3BRR3Y/edit");
                        }}>
                     <BlockText
                         title={"2 заняття математики на тиждень по 40 хв"}/>
@@ -49,7 +50,7 @@ const MainPhone = () => {
                        img={bg4}
                        buttonText={"Реєстрація"}
                        buttonAction={() => {
-                           window.location.replace("https://docs.google.com/forms/d/1i2nrNR4o6e6rRalPRBiP9fPcK2ZELkzsLlfOV3BRR3Y/edit")
+                           window.location.assign("https://docs.google.com/forms/d/1i2nrNR4o6e6rRalPRBiP9fPcK2ZELkzsLlfOV3BRR3Y/edit");
                        }}>
                     <BlockText
                         title={"3 заняття на тиждень по 40 хв: \n" +
@@ -59,7 +60,7 @@ const MainPhone = () => {
                        img={bg5}
                        buttonText={"Реєстрація"}
                        buttonAction={() => {
-                           window.location.replace("https://docs.google.com/forms/d/1i2nrNR4o6e6rRalPRBiP9fPcK2ZELkzsLlfOV3BRR3Y/edit")
+                           window.location.assign("https://docs.google.com/forms/d/1i2nrNR4o6e6rRalPRBiP9fPcK2ZELkzsLlfOV3BRR3Y/edit");
                        }}>
                     <BlockText
                         title={"3 заняття на тиждень по 40 хв: \n" +
@@ -69,7 +70,7 @@ const MainPhone = () => {
                        img={bg6}
                        buttonText={"Реєстрація"}
                        buttonAction={() => {
-                           window.location.replace("https://docs.google.com/forms/d/1i2nrNR4o6e6rRalPRBiP9fPcK2ZELkzsLlfOV3BRR3Y/edit")
+                           window.location.assign("https://docs.google.com/forms/d/1i2nrNR4o6e6rRalPRBiP9fPcK2ZELkzsLlfOV3BRR3Y/edit");
                        }}>
                     <BlockText
                         title={"4 заняття на тиждень по 40 хв:\n" +
@@ -89,7 +90,17 @@ const MainPhone = () => {
                         text={"Оголошуємо про набір до\n" +
                         "майстерні учнів 1-4 класів"}
                     />
-                    {window.innerWidth > 700 ?
+                    {window.innerWidth >= 700 ?
+                        <Post
+                            title={"Реєстрація відкрита"}
+                            text={"Оголошуємо реєстрацію відкритою!"}
+                        /> : null}
+                    {window.innerWidth >= 1000 ?
+                        <Post
+                            title={"Реєстрація відкрита"}
+                            text={"Оголошуємо реєстрацію відкритою!"}
+                        /> : null}
+                    {window.innerWidth >= 1300 ?
                         <Post
                             title={"Реєстрація відкрита"}
                             text={"Оголошуємо реєстрацію відкритою!"}
@@ -98,13 +109,22 @@ const MainPhone = () => {
             </Block>
             <Block
                 title={"Предмети"}
-                buttonText={"Розклад"}
-                buttonAction={()=>{
-                    history.push('/calendar')
-                }}
+                // buttonText={"Розклад"}
+                // buttonAction={()=>{
+                //     history.push('/calendar')
+                // }}
             >
                 <SubjectsMenu/>
 
+            </Block>
+            <Block
+                title={"Розклад"}
+                buttonText={"Реєстрація"}
+                buttonAction={() => {
+                    window.location.assign("https://docs.google.com/forms/d/1i2nrNR4o6e6rRalPRBiP9fPcK2ZELkzsLlfOV3BRR3Y/edit");
+                }}
+            >
+                <Calendar/>
             </Block>
             <Block
                 title={"Контакти"}

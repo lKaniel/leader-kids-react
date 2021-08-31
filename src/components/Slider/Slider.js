@@ -6,10 +6,14 @@ const Slider = ({children}) => {
 
     const [state, setState] = useState({
         selected: 0,
-        children: children
+        children: children,
+        interval: setInterval(()=>{
+            // swipeFor(1)
+        },5000)
     })
 
     const swipeFor = useCallback((amount) => {
+        if (state.children.length < 2) return
         if (window.innerWidth < 1000) {
             setState((prev) => {
                 let selected = prev.selected + amount
@@ -29,7 +33,7 @@ const Slider = ({children}) => {
                 if (selected >= prev.children.length - 1) {
                     selected = 0
                 } else if (selected < 0) {
-                    selected = prev.children.length - 1
+                    selected = prev.children.length - 2
                 }
                 return {
                     ...prev,
@@ -37,7 +41,21 @@ const Slider = ({children}) => {
                 }
             })
         }
-    }, [])
+    }, [state.children.length])
+
+    useEffect(()=>{
+        setState((prev)=>{
+            clearInterval(prev.interval);
+            return{
+                ...prev,
+                children: children,
+                selected: 0,
+                interval: setInterval(()=>{
+                    swipeFor(1)
+                },5000)
+            }
+        })
+    },[children])
 
     useEffect(() => {
         // setInterval(() => {
@@ -50,6 +68,13 @@ const Slider = ({children}) => {
     if (window.innerWidth > 1000) {
         coef /= 2
     }
+
+    let buttons = children.map((element, index) => {
+        if (window.innerWidth > 1000 && length - 1 === index) {
+            return null
+        }
+        return(<div className={state.selected === index ? classes.Button + " " + classes.selected : classes.Button + " " + ""}/>)
+    })
 
     return (
         <div className={classes.SliderWrap}>
@@ -65,8 +90,9 @@ const Slider = ({children}) => {
                     {children}
                 </div>
             </Swipeable>
-            <div className={classes.Buttons}>
 
+            <div className={classes.Buttons}>
+                {buttons}
             </div>
         </div>
     );

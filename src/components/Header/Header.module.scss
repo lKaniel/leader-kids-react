@@ -1,27 +1,41 @@
 .Header{
     position: fixed;
     width: calc(100% - 40px);
+    max-width: 1400px;
     margin-left: 20px;
     background: #4472CA;
     height: 100px;
     border-radius: 20px;
     z-index: 999999;
     overflow: hidden;
+    transition: height .4s ease-in-out;
 
     .Title{
         color: #F3EFF5;
         font-size: 24px;
         font-weight: 700;
         margin: auto;
+        margin-top: 5px;
         text-align: center;
         line-height: 45px;
     }
 
-    img{
+    .Logo{
         position: absolute;
-        width: 100px;
-        right: 0;
-        top: 10px;
+        width: 90px;
+        right: 5px;
+        top: 12px;
+        border-radius: 20px;
+        background: #F3EFF5;
+    }
+
+    .MenuBtn{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 25px;
+        top: 25px;
+        border-radius: 20px;
     }
 
     .Menu{
@@ -32,6 +46,24 @@
         margin-top: 25px;
         margin-left: 25px;
     }
+
+    .MenuList{
+        width: calc(100% - 50px);
+        padding: 25px;
+
+        .MenuItem{
+            padding: 10px 0px;
+            color: #F3EFF5;
+            font-size: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+        }
+    }
+}
+
+.Header.open{
+    height: calc(100vh - 30px);
 }
 
 .HeaderWrap{
@@ -54,6 +86,7 @@
     position: fixed;
     width: calc(100% - 40px);
     height: calc(100% - 140px);
+    max-width: 1400px;
     margin-top: 130px;
     margin-left: 20px;
     z-index: 999999;
