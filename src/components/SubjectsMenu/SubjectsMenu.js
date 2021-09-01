@@ -3,6 +3,7 @@ import mariaA from '../../img/mariaAl.jpg';
 import yoriy from '../../img/yriyS.png';
 import alexeiV from '../../img/alexeiV.jpg'
 import olgN from '../../img/ON.jpg'
+import tetyanaV from '../../img/tetyanaV.jpg'
 import math from '../../img/math.svg'
 import clavdiaT from './../../img/klavdiaT.jpg'
 import alinaA from './../../img/alinaA.jpg'
@@ -42,13 +43,13 @@ const SubjectsMenu = () => {
                     },
                     {
                         name: "Романенко Аліна Оскарівна",
-                        bio: "вчитель 6 та 10 математичних класів Києво-Печерського ліцею № 171 «Лідер», Заслужений вчитель України, вища категорія, вчитель-методист. Педагогічний стаж: з 2006 року",
+                        bio: "вчитель 6 та 10 математичних класів Києво-Печерського ліцею № 171 «Лідер», Заслужений вчитель України, вища категорія, вчитель-методист. Педагогічний стаж: 34 роки",
                         img: alinaA
                     },
                     {
                         name: "Бачило Тетяна Вікторівна ",
-                        bio: "вчитель математики Києво-Печерського ліцею № 171 «Лідер», категорія І",
-                        img: olgN
+                        bio: "вчитель математики Києво-Печерського ліцею № 171 «Лідер», категорія І. Педагогічний стаж: 18 років",
+                        img: tetyanaV
                     }
                 ]
             },
@@ -116,15 +117,17 @@ const SubjectsMenu = () => {
 
     let listOfBigTeachers = state.strings[state.active].teachers.map((teacher, index) => {
         return (
-            <div className={classes.Teachers}>
-                <div className={classes.TeacherWrap}>
-                    <div className={classes.TeacherInfo}>
-                        <img className={classes.Photo} src={teacher.img}/>
-                        <div className={classes.Name}>
-                            {teacher.name}
-                        </div>
-                        <div className={classes.Bio}>
-                            {teacher.bio}
+            <div className={classes.TeachersWrap}>
+                <div className={classes.Teachers}>
+                    <div className={classes.TeacherWrap}>
+                        <div className={classes.TeacherInfo}>
+                            <img className={classes.Photo} src={teacher.img}/>
+                            <div className={classes.Name}>
+                                {teacher.name}
+                            </div>
+                            <div className={classes.Bio}>
+                                {teacher.bio}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -171,30 +174,30 @@ const SubjectsMenu = () => {
                     <StringFormatter text={state.strings[state.active].text}/>
                 </div>
             </div>
-            {window.innerWidth < 700 ?
-                <div className={classes.Teachers}>
-                    <div className={classes.TeacherWrap}>
-                        <div className={classes.TeacherInfo}>
-                            <img className={classes.Photo}
-                                 src={state.strings[state.active].teachers[state.activeTeacher].img}/>
-                            <div className={classes.Name}>
-                                {state.strings[state.active].teachers[state.activeTeacher].name}
-                            </div>
-                            <div className={classes.Bio}>
-                                {state.strings[state.active].teachers[state.activeTeacher].bio}
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        className={classes.TeachersList}
-                        ref={listRef}
-                        // style={{transform: `translate3d(${translateX}px, 0px, 0)`}}
-                    >
-                        {listOfTeachers}
-                    </div>
-                </div>
-                : null}
-            {window.innerWidth >= 700 ?
+            {/*{window.innerWidth < 700 ?*/}
+            {/*    <div className={classes.Teachers}>*/}
+            {/*        <div className={classes.TeacherWrap}>*/}
+            {/*            <div className={classes.TeacherInfo}>*/}
+            {/*                <img className={classes.Photo}*/}
+            {/*                     src={state.strings[state.active].teachers[state.activeTeacher].img}/>*/}
+            {/*                <div className={classes.Name}>*/}
+            {/*                    {state.strings[state.active].teachers[state.activeTeacher].name}*/}
+            {/*                </div>*/}
+            {/*                <div className={classes.Bio}>*/}
+            {/*                    {state.strings[state.active].teachers[state.activeTeacher].bio}*/}
+            {/*                </div>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*        <div*/}
+            {/*            className={classes.TeachersList}*/}
+            {/*            ref={listRef}*/}
+            {/*            // style={{transform: `translate3d(${translateX}px, 0px, 0)`}}*/}
+            {/*        >*/}
+            {/*            {listOfTeachers}*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*    : null}*/}
+            {true ?
                 <Slider>
                     {listOfBigTeachers}
                 </Slider>

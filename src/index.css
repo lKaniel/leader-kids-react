@@ -8,9 +8,28 @@ body {
   background: #F3EFF5;;
 }
 
+
 *{
   overflow-x: hidden;
   user-select: none;
+  scrollbar-width: normal;
+  scrollbar-color: #c6c2c9 #DEDAE0;
+}
+
+*::-webkit-scrollbar{
+  width: 1vw;
+}
+
+*::-webkit-scrollbar-thumb{
+  background: #c6c2c9;
+}
+
+*::-webkit-scrollbar-thumb:hover{
+  background: #85858a;
+}
+
+*::-webkit-scrollbar-track{
+  background: #DEDAE0;
 }
 
 code {

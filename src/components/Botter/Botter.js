@@ -7,10 +7,13 @@ import phone from "../../img/phone.svg"
 import mail from "../../img/mail.svg"
 import location from "../../img/location.svg"
 
-const Botter = () => {
+const Botter = ({withoutMap}) => {
     return (
         <div className={classes.Botter}>
-            <MapWidget/>
+            {!withoutMap ?
+
+                <MapWidget/>
+                : null}
             <div className={classes.Container}>
                 <div className={classes.Line}>
                     <img src={location} className={classes.Icon}/>

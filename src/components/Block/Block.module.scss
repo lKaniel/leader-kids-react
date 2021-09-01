@@ -13,10 +13,11 @@
   flex-direction: column;
   overflow: hidden;
   user-select: none;
+  //pointer-events: none;
 
   .ImgWrap {
     position: absolute;
-    margin-left: -10px;
+    //margin-left: -10px;
     margin-top: -10px;
     width: calc(100vw - 40px);
     height: calc(100% - 10px);
@@ -29,6 +30,8 @@
     background-size: cover;
     background-position: center;
     z-index: 1;
+    pointer-events: none;
+    align-self: center;
   }
 
   .ImgWrap::before{
@@ -68,31 +71,36 @@
   width: 100%;
   height: auto;
   overflow: hidden;
+  //pointer-events: none;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 700px) {
   .starting{
-    min-height: 500px;
-    position: relative;
+    //position: relative;
 
     .ImgWrap{
-      height: 100%;
+      width: calc(50vw - 20px);
     }
   }
 
   .startingWrap{
     width: calc(50%);
-    display: flex;
-    align-items: center;
+    //display: flex;
+    //align-items: center;
     //justify-content: right;
 
 
   }
+}
 
+@media (min-width: 1000px) {
+  .starting{
+    min-height: 500px;
 
-
-
-
+    .ImgWrap{
+      width: calc(17% - 25px);
+    }
+  }
   .Title{
     font-size: 40px !important;
   }

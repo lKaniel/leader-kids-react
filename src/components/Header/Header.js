@@ -1,6 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import classes from './Header.module.scss';
-import logo from '../../img/photo_2021-08-21_19.43.07-removebg-preview.png';
+import logo from '../../img/logo.png';
 import menu from '../../img/menu.svg';
 import StringFormatter from "../StringFormatter/StringFormatter";
 import {Link} from "react-router-dom";
@@ -63,7 +63,7 @@ const Header = () => {
                                 <Block
                                     title={"Контакти"}
                                 >
-                                    <Botter/>
+                                    <Botter withoutMap={true}/>
 
                                 </Block>
                             </> : null

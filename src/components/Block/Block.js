@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import classes from './Block.module.scss';
 
 const Block = ({title, children, buttonText, buttonAction, startingBlock, img}) => {
@@ -6,9 +6,10 @@ const Block = ({title, children, buttonText, buttonAction, startingBlock, img}) 
     if (startingBlock){
         blockCls.push(classes.starting)
     }
+
     return (
         <div className={classes.BlockWrap + " " + (startingBlock ? classes.startingWrap : "")}
-             onClick={window.innerWidth >= 1000 && startingBlock ? buttonAction : null}>
+        >
             <div className={blockCls.join(" ")}>
                 {startingBlock ?
                     <div className={classes.ImgWrap} style={{
@@ -22,7 +23,10 @@ const Block = ({title, children, buttonText, buttonAction, startingBlock, img}) 
                 </div>
                 {children}
                 {buttonText || buttonAction ?
-                    <div className={classes.OuterButton} onClick={buttonAction}>
+                    <div className={classes.OuterButton} onClick={(e)=>{
+                        e.stopPropagation()
+                        buttonAction()
+                    }}>
                         {buttonText} &rarr;
                     </div> : null
                 }

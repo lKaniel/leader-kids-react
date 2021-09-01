@@ -21,7 +21,7 @@
       align-items: center;
       justify-content: center;
 
-      img{
+      img {
         width: 30px;
       }
     }
@@ -55,75 +55,83 @@
     }
   }
 
-  .Teachers {
+  .TeachersWrap {
     width: 100%;
-    margin-top: 10px;
-    border-radius: 50px 20px 20px 20px;
-    //background: #4472CA;
-    background: #F3EFF5;
-    overflow: hidden;
 
-    .Photo {
-      width: 100px;
-      height: 100px;
-      border-radius: 50px;
-      border: 5px solid #353535;
-      box-sizing: border-box;
-      z-index: 99;
-      float: left;
-    }
-
-    .TeacherInfo {
-      margin-left: 10px;
+    .Teachers {
+      width: calc(100%);
       margin-top: 10px;
-      width: calc(100% - 20px);
-      background: #F3EFF5;
-      height: 260px;
       border-radius: 50px 20px 20px 20px;
-      z-index: 98;
+      //background: #4472CA;
+      background: #F3EFF5;
       overflow: hidden;
 
-      .Name {
+      .Photo {
+        width: 100px;
         height: 100px;
-        font-size: 20px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-
-      .Bio {
-        padding: 20px;
-        font-size: 15px;
-        font-weight: 200;
-      }
-    }
-
-    .TeachersList{
-      width: calc(300%);
-      margin: 10px 10px;
-      height: 95px;
-
-      .TeacherButton{
-        width: 75px;
-        height: 75px;
         border-radius: 50px;
-        border: 3px solid #353535;
+        border: 5px solid #353535;
         box-sizing: border-box;
-        margin-right: 10px;
+        z-index: 99;
+        float: left;
+      }
+
+      .TeacherInfo {
+        margin-left: 10px;
+        margin-top: 10px;
+        width: calc(100% - 20px);
+        background: #F3EFF5;
+        height: 260px;
+        border-radius: 50px 20px 20px 20px;
+        z-index: 98;
+        overflow: hidden;
+
+        .Name {
+          height: 100px;
+          font-size: 20px;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+
+        .Bio {
+          padding: 20px;
+          font-size: 15px;
+          font-weight: 200;
+        }
+      }
+
+      .TeachersList {
+        width: calc(300%);
+        margin: 10px 10px;
+        height: 95px;
+
+        .TeacherButton {
+          width: 75px;
+          height: 75px;
+          border-radius: 50px;
+          border: 3px solid #353535;
+          box-sizing: border-box;
+          margin-right: 10px;
+        }
       }
     }
   }
 }
 
 @media (min-width: 700px) {
-  .Teachers{
-    width: calc(50vw - 40px) !important;
-    margin: 0 5px;
+  .TeachersWrap {
+    width: calc(50vw - 30px) !important;
+
+    .Teachers {
+      width: calc(100% - 10px) !important;
+      margin: 0 5px !important;
+    }
   }
 
-  .Teachers:last-of-type{
+  .Teachers:last-of-type {
     margin: 0;
   }
 }
